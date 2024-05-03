@@ -28,6 +28,20 @@ dependencies {
     // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
     implementation 'org.seleniumhq.selenium:selenium-java:4.14.0'
 
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.dataformat/jackson-dataformat-xml
+    implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.17.0'
+
+}
+
+test {
+    useTestNG() {
+        suites 'src/test/resources/testNG.xml'
+    }
+
+    testLogging {
+        showStandardStreams = true
+        events "passed", "skipped", "failed"
+    }
 }
 
 //task startScript(type:Exec) {
